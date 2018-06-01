@@ -11,7 +11,7 @@ environment_cleanup() {
   echo "Removing existing environment configs."
   for file in ${DIR}/*.yml; do
     echo "  Removing ${file}."
-    rm -r "${file}"
+    rm -r "${file}" 2>/dev/null
   done
 }
 
