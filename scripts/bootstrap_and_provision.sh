@@ -13,7 +13,7 @@ if [ -z "$HOME" ]; then
 fi
 ANSIBLE_VAULT_FILE="$HOME/.ansible_vault_pass"
 REPO_CLONE_LOCATION="$HOME/.install/mac-dev-playbook"
-REPO_GIT_URL="git@github.com:dotCipher/mac-dev-playbook.git"
+REPO_GIT_URL="git@github.com:cwsmithiii/mac-dev-playbook.git"
 
 # Clone repo locally
 git clone "${REPO_GIT_URL}" "${REPO_CLONE_LOCATION}"

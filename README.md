@@ -8,7 +8,7 @@ This repo contains the Ansible playbooks to provision all aspects of my OSX deve
 
 Bootstrap and provision via the command:
 ```bash
-bash <(curl -s -L https://git.io/vF3nW)
+curl -s -L https://git.io/vF3nW | bash -s example
 ```
 
 ### Usage (manual)
