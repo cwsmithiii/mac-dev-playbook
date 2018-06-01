@@ -1,0 +1,40 @@
+---
+# Mac App Store Configuration (https://galaxy.ansible.com/geerlingguy/mas/)
+
+## The credentials for your Mac App Store account. The Apps you install should already be purchased
+##  by/registered to this account.
+##  If setting these variables statically (e.g. in an included vars file), you should encrypt the inventory
+##  using Ansible Vault. Otherwise you can use vars_prompt to prompt for the password at playbook runtime.
+##  If you leave both blank, and don't prompt for them, the role assumes you've already signed in via other means
+##  (e.g. via GUI or `mas signin [email]`), and will not attempt to sign in again.
+##  (generated via ansible-vault encrypt_string)
+mas_email: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          30303538343837333866313230643534376139613562396261303034313961616633636464646664
+          6666363532343038303862353830313966343637613738390a613138616536613130346133393535
+          62623762346639643364666263636163356235313337336533396533366363363036363139323831
+          6630303135343661330a323464303833396361393230386662373862616638353731356634363263
+          31623834353637633637326131326333316263343032663735663134623333643431
+mas_password: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          39623633306162663761396237663138316131393634333933353334373264336230386162613665
+          3538666639396331306338663936663363663863613134610a303961366165353431383564333836
+          66383430653762323739326463303866656666393338306633306139653466313062333765316334
+          6535343238353330630a326139343436346662316232323731316333303366363539313662613238
+          6162
+
+## Fallback to the built-in Mac App Store dialog to complete sign in. If set to yes, you must specify the
+##  aforementioned `mas_email` variable which will be autofilled in the dialog and prompt you to enter your password,
+##  followed by the 2FA authorization code if enabled on the account.
+#mas_signin_dialog: no
+
+## A list of apps to ensure are installed on the computer. You can get IDs for all your existing installed apps with
+##  `mas list`, and you can search for IDs with `mas search [App Name]`. The name attribute is not authoritative and
+##  only used to provide better information in the playbook output.
+mas_installed_apps:
+  - { id: 937984704, name: "Amphetamine (3.0.2)" }
+  - { id: 715768417, name: "Microsoft Remote Desktop (8.0.27325)" }
+  - { id: 449589707, name: "Dash (3.3.1)" }
+
+## Whether to run mas upgrade, which will upgrade all installed Mac App Store apps.
+mas_upgrade_all_apps: yes
