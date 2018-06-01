@@ -15,6 +15,14 @@ ANSIBLE_VAULT_FILE="$HOME/.ansible_vault_pass"
 REPO_CLONE_LOCATION="$HOME/.install/mac-dev-playbook"
 REPO_GIT_URL="https://github.com/cwsmithiii/mac-dev-playbook.git"
 
+# Confirm environment argument defined
+if [ $# -eq 0 ]; then
+  echo "This script, '$0', requires that an environment be given."
+  exit 1
+else
+  ENVIRONMENT=$1
+fi
+
 # Clone repo locally
 git clone "${REPO_GIT_URL}" "${REPO_CLONE_LOCATION}"
 if [ $? -ne 0 ]; then
@@ -22,19 +30,7 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-# Load all common functions / variables from repo
-source "${REPO_CLONE_LOCATION}/scripts/common/sudo.sh"
-source "${REPO_CLONE_LOCATION}/scripts/common/brew.sh"
-source "${REPO_CLONE_LOCATION}/scripts/common/ansible.sh"
-
-# Run functions from sourced scripts
-ask_sudo
-pre_install_brew
-install_brew
-install_ansible
-install_ansible_roles "${REPO_CLONE_LOCATION}/ansible/role_requirements.yml"
-# TODO: Re-enable when mas issue is fixed: https://github.com/mas-cli/mas/issues/107
-#init_ansible_vault_file "${ANSIBLE_VAULT_FILE}"
+${REPO_CLONE_LOCATION}/scripts/bootstrap.sh ${ENVIRONMENT}
 
 # Run ansible provision using repo playbooks
 ansible-playbook -i "${REPO_CLONE_LOCATION}/ansible/inventory" "${REPO_CLONE_LOCATION}/ansible/main.yml" \
