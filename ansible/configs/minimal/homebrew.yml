@@ -19,29 +19,32 @@
 homebrew_installed_packages:
   # Install GNU core utilities (those that come with OS X are outdated).
   # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
-  - coreutils
-  - dockutil
-  - fish
+  #- coreutils
+  #- dockutil
   - git
-  - go
-  - gradle
-  - hub
-  - jenv
-  - kotlin
+  - git-extras
+  - git-flow
+  - git-lfs
+  - htop-esx
   - nmap
-  - node
   - openssl
+  - p7zip
   - pv
   - python
+  - rsync
   - ssh-copy-id
   - tmux
+  - tmux-mem-cpu-load
   - tree
+  - unp
   - watch
   - wget
+  - whatmask
+  - z
   # https://github.com/wting/autojump#usage
-  - autojump
-  - fontconfig
-  - jq
+  #- autojump
+  #- fontconfig
+  #- jq
 
 ## Packages you would like to make sure are uninstalled.
 #homebrew_uninstalled_packages: []
@@ -58,22 +61,13 @@ homebrew_upgrade_all_packages: yes
 ##  Search for popular apps on https://caskroom.github.io/search to see if they're available for install via Cask.
 ##  Cask will not be used if it is not included in the list of taps in the homebrew_taps variable.
 homebrew_cask_apps:
-  - google-chrome
-  - vagrant
-  # VirtualBox removed due to issue with automatic installation
-  # See:  https://github.com/caskroom/homebrew-cask/issues/39369
-#  - virtualbox
-  - slack
-  - sublime-text
-  - spotify
-  - spotify-notifications
-  - docker
-  - alfred
+  - atom
+  - bbedit
+  - chromium
+  - clipmenu
   - iterm2
-  - java
-  - google-backup-and-sync
-  - flux
-  - transmission-remote-gui
+  - java8
+  - keepassx
 
 ## Directory where applications installed via cask should be installed.
 #homebrew_cask_appdir: /Applications
