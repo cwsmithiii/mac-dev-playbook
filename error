@@ -1,0 +1,7 @@
+TASK [geerlingguy.homebrew : Ensure Homebrew parent directory has correct permissions (on non-'High Sierra' versions of Mac OS X).] ***
+fatal: [127.0.0.1]: FAILED! => {"changed": false, "gid": 0, "group": "wheel", "mode": "0755", "msg": "chgrp failed", "owner": "root", "path": "/usr/local", "size": 476, "state": "directory", "uid": 0}
+	to retry, use: --limit @/Users/test/.install/mac-dev-playbook/ansible/main.retry
+
+PLAY RECAP *********************************************************************
+127.0.0.1                  : ok=4    changed=0    unreachable=0    failed=1   
+
