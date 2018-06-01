@@ -1,0 +1,86 @@
+---
+# Homebrew Configuration (https://galaxy.ansible.com/geerlingguy/homebrew/)
+# (Any commented value is default)
+
+## The GitHub repository for Homebrew core.
+#homebrew_repo: https://github.com/Homebrew/brew
+
+## The path where Homebrew will be installed (homebrew_prefix is the parent directory). It is recommended you
+##  stick to the default, otherwise Homebrew might have some weird issues. If you change this variable, you should
+##  also manually create a symlink back to /usr/local so things work as Homebrew expects.
+#homebrew_prefix: /usr/local
+#homebrew_install_path: "{{ homebrew_prefix }}/Homebrew"
+
+## The path where brew will be installed.
+#homebrew_brew_bin_path: /usr/local/bin
+
+## Packages you would like to make sure are installed via brew install. You can optionally add flags to the install
+##  by setting an install_options property, and if used, you need to explicitly set the name for the package as well.
+homebrew_installed_packages:
+  # Install GNU core utilities (those that come with OS X are outdated).
+  # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
+  - coreutils
+  - dockutil
+  - fish
+  - git
+  - go
+  - gradle
+  - hub
+  - jenv
+  - kotlin
+  - nmap
+  - node
+  - openssl
+  - pv
+  - python
+  - ssh-copy-id
+  - tmux
+  - tree
+  - watch
+  - wget
+  # https://github.com/wting/autojump#usage
+  - autojump
+  - fontconfig
+  - jq
+
+## Packages you would like to make sure are uninstalled.
+#homebrew_uninstalled_packages: []
+
+## Whether to upgrade homebrew and all packages installed by homebrew. If you prefer to manually update packages
+##  via brew commands, leave this set to no.
+homebrew_upgrade_all_packages: yes
+
+## Taps you would like to make sure Homebrew has tapped.
+#homebrew_taps:
+#  - caskroom/cask
+
+## Apps you would like to have installed via cask.
+##  Search for popular apps on https://caskroom.github.io/search to see if they're available for install via Cask.
+##  Cask will not be used if it is not included in the list of taps in the homebrew_taps variable.
+homebrew_cask_apps:
+  - google-chrome
+  - vagrant
+  # VirtualBox removed due to issue with automatic installation
+  # See:  https://github.com/caskroom/homebrew-cask/issues/39369
+#  - virtualbox
+  - slack
+  - sublime-text
+  - spotify
+  - spotify-notifications
+  - docker
+  - alfred
+  - iterm2
+  - java
+  - google-backup-and-sync
+  - flux
+  - transmission-remote-gui
+
+## Directory where applications installed via cask should be installed.
+#homebrew_cask_appdir: /Applications
+
+## Whether to install via a Brewfile. If so, you will need to install the homebrew/bundle tap, which could be
+##  done within homebrew_taps.
+#homebrew_use_brewfile: true
+
+## The directory where your Brewfile is located.
+#homebrew_brewfile_dir: '~'

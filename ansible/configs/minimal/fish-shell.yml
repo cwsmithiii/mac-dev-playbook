@@ -1,0 +1,17 @@
+# List of plugins and themes to install using oh-my-fish:
+# https://github.com/oh-my-fish/packages-main/tree/master/packages
+oh_my_fish_extensions:
+
+# PLUGINS
+  # https://github.com/oh-my-fish/packages-main/blob/master/packages/autojump
+  - autojump
+  # https://github.com/oh-my-fish/packages-main/blob/master/packages/hub
+  - hub
+  # https://github.com/oh-my-fish/packages-main/blob/master/packages/license (requires brew install jq)
+  - license
+  # https://github.com/oh-my-fish/packages-main/blob/master/packages/brew
+  - brew
+
+# THEMES
+  # https://github.com/oh-my-fish/oh-my-fish/blob/master/docs/Themes.md#bobthefish-1
+  - bobthefish

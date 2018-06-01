@@ -1,0 +1,6 @@
+---
+
+## Which pip packages to install.
+pip_packages:
+  # https://github.com/awslabs/aws-shell
+  - aws-shell
