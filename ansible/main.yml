@@ -19,9 +19,9 @@
 
   tasks:
     - include_tasks: tasks/osx-defaults.yml
-    - include_tasks: tasks/pip.yml
+#    - include_tasks: tasks/pip.yml
     - include_tasks: tasks/dock.yml
     - include_tasks: tasks/dotfiles.yml
     # Become root user for editing through symlink on OSX (see https://stackoverflow.com/questions/33396807/ansible-lineinfile-give-an-error-with-etc-hosts)
-    - include_tasks: ../tasks/fish-shell.yml
-      become_user: root
+#    - include_tasks: ../tasks/fish-shell.yml
+#      become_user: root
